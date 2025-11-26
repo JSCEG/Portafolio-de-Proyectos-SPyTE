@@ -108,7 +108,10 @@
 
                     <article class="project-card" data-device="desktop">
                         <div class="project-card__media">
-                            <div class="media-placeholder"></div>
+                            <span class="video-badge"><i class="bi bi-play-fill"></i> Video</span>
+                            <video src="https://cdn.sassoapps.com/videos/Celac.mp4"
+                                poster="https://cdn.sassoapps.com/videos/celac.png" muted loop playsinline
+                                preload="none" class="card-video"></video>
                         </div>
                         <div class="project-card__content">
                             <div class="project-card__meta">
@@ -135,7 +138,10 @@
 
                     <article class="project-card" data-device="desktop">
                         <div class="project-card__media">
-                            <div class="media-placeholder"></div>
+                            <span class="video-badge"><i class="bi bi-play-fill"></i> Video</span>
+                            <video src="https://cdn.sassoapps.com/videos/areas%20de%20interes.mp4"
+                                poster="https://cdn.sassoapps.com/videos/areas%20de%20interes.png" muted loop
+                                playsinline preload="none" class="card-video"></video>
                         </div>
                         <div class="project-card__content">
                             <div class="project-card__meta">
@@ -162,7 +168,10 @@
 
                     <article class="project-card" data-device="desktop">
                         <div class="project-card__media">
-                            <div class="media-placeholder"></div>
+                            <span class="video-badge"><i class="bi bi-play-fill"></i> Video</span>
+                            <video src="https://cdn.sassoapps.com/videos/Impacto%20Social.mp4"
+                                poster="https://cdn.sassoapps.com/videos/impoactosocial.png" muted loop playsinline
+                                preload="none" class="card-video"></video>
                         </div>
                         <div class="project-card__content">
                             <div class="project-card__meta">
@@ -188,7 +197,10 @@
 
                     <article class="project-card" data-device="desktop">
                         <div class="project-card__media">
-                            <div class="media-placeholder"></div>
+                            <span class="video-badge"><i class="bi bi-play-fill"></i> Video</span>
+                            <video src="https://cdn.sassoapps.com/videos/SNIER%202025.mp4"
+                                poster="https://cdn.sassoapps.com/videos/Snier.png" muted loop playsinline
+                                preload="none" class="card-video"></video>
                         </div>
                         <div class="project-card__content">
                             <div class="project-card__meta">
@@ -228,7 +240,10 @@
                 <div class="project-grid">
                     <article class="project-card" data-device="mobile">
                         <div class="project-card__media">
-                            <div class="media-placeholder"></div>
+                            <span class="video-badge"><i class="bi bi-play-fill"></i> Video</span>
+                            <video src="https://cdn.sassoapps.com/videos/Mapas%20Dinamicos.mp4"
+                                poster="https://cdn.sassoapps.com/videos/Mapas%20Dinamicos.png" muted loop playsinline
+                                preload="none" class="card-video"></video>
                         </div>
                         <div class="project-card__content">
                             <div class="project-card__meta">
@@ -362,6 +377,77 @@
             });
         });
     </script>
+</body>
+
+<div id="video-modal" class="video-modal" aria-hidden="true">
+    <div class="video-modal__overlay"></div>
+    <div class="video-modal__content">
+        <button class="video-modal__close" aria-label="Cerrar video">
+            <i class="bi bi-x-lg"></i>
+        </button>
+        <div class="video-modal__video-container">
+            <video controls playsinline class="modal-video"></video>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const videos = document.querySelectorAll('video.card-video');
+        const modal = document.getElementById('video-modal');
+        const modalVideo = modal.querySelector('.modal-video');
+        const closeBtn = modal.querySelector('.video-modal__close');
+        const overlay = modal.querySelector('.video-modal__overlay');
+
+        // Hover behavior
+        videos.forEach(video => {
+            const container = video.closest('.project-card__media');
+
+            if (container) {
+                container.addEventListener('mouseenter', () => {
+                    video.play().catch(e => console.log('Autoplay prevented:', e));
+                });
+
+                container.addEventListener('mouseleave', () => {
+                    video.pause();
+                    video.currentTime = 0;
+                });
+
+                // Click to open modal
+                container.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const videoSrc = video.getAttribute('src');
+                    if (videoSrc) {
+                        modalVideo.src = videoSrc;
+                        modal.classList.add('active');
+                        modal.setAttribute('aria-hidden', 'false');
+                        modalVideo.play();
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            }
+        });
+
+        // Close modal functions
+        const closeModal = () => {
+            modal.classList.remove('active');
+            modal.setAttribute('aria-hidden', 'true');
+            modalVideo.pause();
+            modalVideo.src = '';
+            document.body.style.overflow = '';
+        };
+
+        closeBtn.addEventListener('click', closeModal);
+        overlay.addEventListener('click', closeModal);
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    });
+</script>
 </body>
 
 </html>
