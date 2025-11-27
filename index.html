@@ -21,7 +21,6 @@
             <div class="brand">
                 <div class="brand-logos">
                     <img src="img/logo_sener.png" alt="Logo SENER" class="brand-logo brand-logo--sener" />
-                    <img src="img/snien.png" alt="Logo SNIEn" class="brand-logo brand-logo--snien" />
                 </div>
                 <div class="brand-copy">
                     <span class="brand-eyebrow">Subsecretaría de Planeación y Transición Energética</span>
@@ -29,8 +28,8 @@
                 </div>
             </div>
             <div class="header-meta">
-                <span class="meta-label">Corte</span>
-                <span class="meta-value">Noviembre 2025</span>
+                <span class="meta-label">Actualizado</span>
+                <span class="meta-value" id="current-date">—</span>
             </div>
         </div>
     </header>
@@ -60,9 +59,8 @@
                     <p class="eyebrow">Gobierno de México · 2025</p>
                     <h1>Experiencias digitales para planeación, transparencia y transición energética.</h1>
                     <p class="hero-portfolio__lead">
-                        Este portafolio reúne las plataformas activas del ecosistema SENER/SNIEn. Cada producto se
-                        construyó respetando la tipografía institucional (Patria + Noto Sans), los tonos guinda y
-                        verde, y principios mobile-first que aseguran consistencia entre escritorio, tablet y campo.
+                        Este portafolio reúne los prototipos y plataformas del ecosistema de palicaciones de las
+                        Subsecretaría de Planeación y Transisciónde SENER.
                     </p>
                     <div class="hero-portfolio__actions">
                         <a class="btn btn-primary" href="#desktop-projects">Ver experiencias de escritorio</a>
@@ -70,17 +68,17 @@
                             aria-label="Explorar experiencias mobile-first">Explorar experiencias mobile-first</a>
                     </div>
                 </div>
-                <div class="hero-portfolio__stats">
-                    <article class="hero-stat">
-                        <span class="hero-stat__value">08</span>
+                <div class="hero-portfolio__stats" aria-live="polite">
+                    <article class="hero-stat" data-stat>
+                        <span class="hero-stat__value" data-target="8" data-pad="2">08</span>
                         <span class="hero-stat__label">Plataformas en producción</span>
                     </article>
-                    <article class="hero-stat">
-                        <span class="hero-stat__value">32</span>
+                    <article class="hero-stat" data-stat>
+                        <span class="hero-stat__value" data-target="32">32</span>
                         <span class="hero-stat__label">Entidades cubiertas con datos oficiales</span>
                     </article>
-                    <article class="hero-stat">
-                        <span class="hero-stat__value">2</span>
+                    <article class="hero-stat" data-stat>
+                        <span class="hero-stat__value" data-target="2">2</span>
                         <span class="hero-stat__label">Experiencias 100% mobile-first</span>
                     </article>
                 </div>
@@ -257,9 +255,9 @@
                                 <span class="project-tag project-tag--desktop">Escritorio</span>
                                 <span class="project-year">2025</span>
                             </div>
-                            <h3>Plataforma Oficial SNIER</h3>
+                            <h3>Plataforma Oficial SNIEn</h3>
                             <p>Prototipo del Sistema Nacional de Información Energética con acceso federado,
-                                onboarding institucional y catálogo de módulos.</p>
+                                onboarding institucional y módulos.</p>
                             <ul class="project-card__highlights">
                                 <li>Login con Google, Facebook y consulta pública + registro institucional.</li>
                                 <li>Catálogo de módulos (Balance Energético, CELs, mercado eléctrico, eficiencia).</li>
@@ -354,49 +352,80 @@
                 <div class="section-heading">
                     <p class="eyebrow">Clasificación rápida</p>
                     <h2>Relación de plataformas por entorno.</h2>
-                    <p>Esta matriz permite explicar de forma inmediata qué proyectos deben mostrarse en pantallas
-                        grandes y cuáles se diseñaron para operación en campo.</p>
+                    <p>Este mapa mental agrupa de forma inmediata qué experiencias viven en pantallas grandes y
+                        cuáles se diseñaron para operación en campo.</p>
                 </div>
-                <div class="classification__grid">
-                    <div class="classification-row">
-                        <span class="classification-name">Plantilla Institucional SENER 2025</span>
-                        <span class="classification-chip classification-chip--desktop">Escritorio</span>
-                        <span class="classification-note">Herramienta de documentación para reportes técnicos.</span>
+                <div class="mindmap">
+                    <div class="mindmap__branch mindmap__branch--desktop">
+                        <div class="mindmap__branch-header">
+                            <span class="mindmap__branch-icon"><i class="bi bi-pc-display"></i></span>
+                            <div>
+                                <p class="mindmap__branch-eyebrow">Entorno principal</p>
+                                <h3>Escritorio</h3>
+                                <p class="mindmap__branch-lead">Flujos densos en datos, descargas oficiales y
+                                    monitoreo analítico.</p>
+                            </div>
+                        </div>
+                        <ul class="mindmap__nodes">
+                            <li class="mindmap-node">
+                                <span class="mindmap-node__title">Plantilla Institucional SENER 2025</span>
+                                <span class="mindmap-node__note">Documentación y reportes técnicos.</span>
+                            </li>
+                            <li class="mindmap-node">
+                                <span class="mindmap-node__title">Balance Nacional de Energía 2024</span>
+                                <span class="mindmap-node__note">Sankey, catálogos FEP y descargas CSV/PNG/SVG.</span>
+                            </li>
+                            <li class="mindmap-node">
+                                <span class="mindmap-node__title">Solicitud CELAC</span>
+                                <span class="mindmap-node__note">Capas WebGL, políticas regionales y enlaces
+                                    oficiales.</span>
+                            </li>
+                            <li class="mindmap-node">
+                                <span class="mindmap-node__title">Geovisualizador de Áreas de Interés</span>
+                                <span class="mindmap-node__note">Automatiza análisis de KML multicapas.</span>
+                            </li>
+                            <li class="mindmap-node">
+                                <span class="mindmap-node__title">Evaluación de Impacto Social</span>
+                                <span class="mindmap-node__note">Comparativos socioenergéticos por entidad.</span>
+                            </li>
+                            <li class="mindmap-node">
+                                <span class="mindmap-node__title">Plataforma Oficial SNIEn</span>
+                                <span class="mindmap-node__note">Onboarding federado y módulos institucionales.</span>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="classification-row">
-                        <span class="classification-name">Balance Nacional de Energía 2024</span>
-                        <span class="classification-chip classification-chip--desktop">Escritorio</span>
-                        <span class="classification-note">Requiere múltiples paneles simultáneos y descargas.</span>
+                    <div class="mindmap__core">
+                        <span class="mindmap__core-eyebrow">Mapa mental</span>
+                        <h3>Ecosistema</h3>
+                        <p>Pototipos y funcionalidades de acuerdo al uso.</p>
+                        <div class="mindmap__core-tags">
+                            <span>Datos oficiales</span>
+                            <span>Planeación</span>
+                            <span>Operación en campo</span>
+                        </div>
                     </div>
-                    <div class="classification-row">
-                        <span class="classification-name">Solicitud CELAC</span>
-                        <span class="classification-chip classification-chip--desktop">Escritorio</span>
-                        <span class="classification-note">Capas WebGL con requerimientos gráficos avanzados.</span>
-                    </div>
-                    <div class="classification-row">
-                        <span class="classification-name">Geovisualizador de Áreas de Interés</span>
-                        <span class="classification-chip classification-chip--desktop">Escritorio</span>
-                        <span class="classification-note">Consolas para manejo de KML y reportes pesados.</span>
-                    </div>
-                    <div class="classification-row">
-                        <span class="classification-name">Evaluación de Impacto Social</span>
-                        <span class="classification-chip classification-chip--desktop">Escritorio</span>
-                        <span class="classification-note">Gráficas, metodologías y comparativos simultáneos.</span>
-                    </div>
-                    <div class="classification-row">
-                        <span class="classification-name">Plataforma Oficial SNIER</span>
-                        <span class="classification-chip classification-chip--desktop">Escritorio</span>
-                        <span class="classification-note">Onboarding institucional y flujos de registro extensos.</span>
-                    </div>
-                    <div class="classification-row">
-                        <span class="classification-name">Automatización de Mapas SNIEn</span>
-                        <span class="classification-chip classification-chip--mobile">Mobile</span>
-                        <span class="classification-note">Botones de acción flotante y gestos de campo.</span>
-                    </div>
-                    <div class="classification-row">
-                        <span class="classification-name">Mapas Dinámicos de Presas</span>
-                        <span class="classification-chip classification-chip--mobile">Mobile</span>
-                        <span class="classification-note">Menús en carrusel y controles pensados para tablets.</span>
+                    <div class="mindmap__branch mindmap__branch--mobile">
+                        <div class="mindmap__branch-header">
+                            <span class="mindmap__branch-icon"><i class="bi bi-phone"></i></span>
+                            <div>
+                                <p class="mindmap__branch-eyebrow">Operación en campo</p>
+                                <h3>Mobile-first</h3>
+                                <p class="mindmap__branch-lead">Construidas para gestos táctiles, controles grandes y
+                                    contexto de brigadas.</p>
+                            </div>
+                        </div>
+                        <ul class="mindmap__nodes">
+                            <li class="mindmap-node">
+                                <span class="mindmap-node__title">Automatización de Mapas SNIEn</span>
+                                <span class="mindmap-node__note">Interfaz touch para instrumentos PLADESE y
+                                    exportación guiada.</span>
+                            </li>
+                            <li class="mindmap-node">
+                                <span class="mindmap-node__title">Mapas Dinámicos de Presas</span>
+                                <span class="mindmap-node__note">Controles flotantes y exportación de infraestructura
+                                    hidroeléctrica.</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -609,6 +638,91 @@
                 closeModal();
             }
         });
+    });
+</script>
+<script>
+    (function () {
+        const currentDateEl = document.getElementById('current-date');
+        if (currentDateEl) {
+            const formatter = new Intl.DateTimeFormat('es-MX', {
+                day: '2-digit',
+                month: 'long',
+                year: 'numeric'
+            });
+            currentDateEl.textContent = formatter.format(new Date());
+        }
+    })();
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const heroSection = document.querySelector('.hero-portfolio');
+        const statValues = document.querySelectorAll('.hero-stat__value[data-target]');
+
+        if (!heroSection || !statValues.length) {
+            return;
+        }
+
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        const formatValue = (value, pad) => {
+            if (Number.isInteger(pad) && pad > 0) {
+                return String(value).padStart(pad, '0');
+            }
+            return String(value);
+        };
+
+        const animateValue = (el) => {
+            const target = parseInt(el.dataset.target, 10);
+            if (Number.isNaN(target) || el.dataset.counted === 'true') {
+                return;
+            }
+
+            el.dataset.counted = 'true';
+            const pad = parseInt(el.dataset.pad, 10);
+            const duration = 1400;
+            const startTime = performance.now();
+            const easeOutCubic = (t) => 1 - Math.pow(1 - t, 3);
+
+            const update = (now) => {
+                const elapsed = now - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = easeOutCubic(progress);
+                const currentValue = Math.round(target * eased);
+                el.textContent = formatValue(currentValue, pad);
+
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                } else {
+                    el.textContent = formatValue(target, pad);
+                    el.classList.remove('is-counting');
+                }
+            };
+
+            el.classList.add('is-counting');
+            requestAnimationFrame(update);
+        };
+
+        if (prefersReducedMotion) {
+            statValues.forEach((el) => {
+                const target = parseInt(el.dataset.target, 10);
+                const pad = parseInt(el.dataset.pad, 10);
+                if (!Number.isNaN(target)) {
+                    el.textContent = formatValue(target, pad);
+                }
+            });
+            return;
+        }
+
+        const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    statValues.forEach(animateValue);
+                    obs.disconnect();
+                }
+            });
+        }, { threshold: 0.4 });
+
+        observer.observe(heroSection);
     });
 </script>
 </body>
